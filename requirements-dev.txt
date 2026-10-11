@@ -1,0 +1,3 @@
+# Local development and CI tests only. NOT for the production image.
+-r requirements.txt
+pytest==9.1.1
