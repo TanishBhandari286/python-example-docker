@@ -1,0 +1,30 @@
+# Keep the build context to exactly what the image needs (DEVOPS_NOTES §3).
+
+# VCS + editors: .git changes on every commit and would bust the cache
+.git
+.gitignore
+.vscode
+.idea
+
+# Secrets: NEVER send these to the builder
+.env
+.env.*
+
+# Local Python junk (built for YOUR laptop, useless or harmful in Linux)
+.venv
+**/__pycache__
+**/*.pyc
+.pytest_cache
+
+# Local data
+data/
+*.db
+
+# Not needed at runtime
+tests/
+requirements-dev.txt
+*.md
+
+# The build files themselves
+Dockerfile
+.dockerignore
